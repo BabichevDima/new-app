@@ -42,11 +42,11 @@
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "fe app",
+                    "semanticObject": "feApp",
                     "action": "display",
-                    "title": "{{flpTitle}}",
-                    "subTitle": "{{flpSubtitle}}",
-                    "icon": ""
+                    "title": "FE App",
+                    "subTitle": "subTitle",
+                    "icon": "sap-icon://sales-order"
                 }
             }
         }

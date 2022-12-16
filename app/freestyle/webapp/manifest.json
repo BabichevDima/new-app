@@ -35,9 +35,9 @@
                     },
                     "semanticObject": "freestyle",
                     "action": "display",
-                    "title": "{{flpTitle}}",
-                    "subTitle": "{{flpSubtitle}}",
-                    "icon": ""
+                    "title": "Freestyle App",
+                    "subTitle": "Demo app",
+                    "icon": "sap-icon://add-favorite"
                 }
             }
         }
