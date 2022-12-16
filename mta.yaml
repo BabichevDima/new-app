@@ -59,10 +59,6 @@ modules:
       build-result: resources
       requires:
         - artifacts:
-            - projectfe.zip
-          name: projectfe
-          target-path: resources/
-        - artifacts:
             - test.zip
           name: test
           target-path: resources/
@@ -70,16 +66,10 @@ modules:
             - freestyle.zip
           name: freestyle
           target-path: resources/
-  - name: projectfe
-    type: html5
-    path: app/projectfe
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm install
-        - 'npm run build:cf'
-      supported-platforms: []
+        - artifacts:
+            - feapp.zip
+          name: feapp
+          target-path: resources/
   - name: test
     type: html5
     path: app/test
@@ -99,6 +89,16 @@ modules:
       commands:
         - npm install
         - 'npm run build:cf'
+      supported-platforms: []
+  - name: feapp
+    type: html5
+    path: app/feapp
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+      - npm install
+      - npm run build:cf
       supported-platforms: []
   - name: mta-db-deployer
     type: hdb
