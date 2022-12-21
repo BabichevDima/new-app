@@ -2,7 +2,8 @@
     controllerName="freestyle.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    xmlns:semantic="sap.f.semantic"
+    xmlns:wt="freestyle.control">
 
     <semantic:SemanticPage
         id="page"
@@ -59,6 +60,9 @@
                     <Column id="unitNumberColumn" hAlign="End">
                         <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
                     </Column>
+                    <Column id="Custom" hAlign="End">
+                        <Text text="{i18n>CustomColumnTitle}" id="CustomTitle"/>
+                    </Column>
                 </columns>
 
                 <items>
@@ -74,6 +78,9 @@
                                     formatter: '.formatter.numberUnit'
                                 }"
                                 unit="{ID}" />
+                            <HBox>
+                                <wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange"/>
+                            </HBox>
                         </cells>
                     </ColumnListItem>
                 </items>

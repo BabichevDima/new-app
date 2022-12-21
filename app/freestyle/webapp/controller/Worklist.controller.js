@@ -3,14 +3,26 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "../model/formatter",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+    "sap/ui/model/FilterOperator",
+	"sap/m/MessageToast"
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator, MessageToast) {
     "use strict";
 
     return BaseController.extend("freestyle.controller.Worklist", {
 
         formatter: formatter,
 
+        _onObjectMatched: function (oEvent) {
+			this.byId("rating").reset();
+		},
+
+		onRatingChange: function (oEvent) {
+			var fValue = oEvent.getParameter("value");
+			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+
+			MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
+		},
+        
         /* =========================================================== */
         /* lifecycle methods                                           */
         /* =========================================================== */
