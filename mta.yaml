@@ -109,6 +109,14 @@ modules:
       disk-quota: 128M
     requires:
       - name: mta-db
+  - name: mta-approuter
+    type: approuter.nodejs
+    path: app/approuter
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: mta-destination-service
 resources:
   - name: mta-repo-host
     type: org.cloudfoundry.managed-service
@@ -129,6 +137,11 @@ resources:
                 ProxyType: Internet
                 Type: HTTP
                 URL: 'https://ui5.sap.com'
+              - Authentication: NoAuthentication
+                Name: my-destination
+                ProxyType: Internet
+                Type: HTTP
+                URL: 'https://ee9a6102trial-trial-0xjdkl7s-dev-mta-srv.cfapps.us10-001.hana.ondemand.com'
               - Authentication: NoAuthentication
                 HTML5.DynamicDestination: true
                 HTML5.ForwardAuthToken: true

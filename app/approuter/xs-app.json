@@ -1,0 +1,10 @@
+{
+    "authenticationMethod": "none",
+    "routes": [
+      {
+        "source": "^/bookshop/(.*)$",
+        "target": "$1",
+        "destination": "my-destination"
+      }
+    ]
+}
