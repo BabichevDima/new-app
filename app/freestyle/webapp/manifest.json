@@ -17,12 +17,12 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/book-shop/",
+                "uri": "/bookshop/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "4.0"
+                    "odataVersion": "2.0"
                 }
             }
         },
