@@ -4,7 +4,6 @@
         "start": "node node_modules/@sap/approuter/approuter.js"
     },
     "dependencies": {
-        "@sap/approuter": "^6.0.1",
-        "passport": "0.6.0"
+        "@sap/approuter": "^6.0.1"
     }
 }

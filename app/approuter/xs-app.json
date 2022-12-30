@@ -1,12 +1,10 @@
 {
-    "authenticationMethod": "route",
+    "authenticationMethod": "none",
     "routes": [
       {
         "source": "^/bookshop/(.*)$",
-        "target": "/v2/book-shop/$1",
-        "destination": "my-destination",
-        "authenticationType": "xsuaa",
-        "csrfProtection": false
+        "target": "$1",
+        "destination": "my-destination"
       }
     ]
 }
