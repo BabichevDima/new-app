@@ -1,11 +1,37 @@
 using {sap.capire.bookshop as bookshop} from '../db/schema';
 
 service BookShopService {
+    entity Books @(restrict : [
+        {
+            grant : ['READ'],
+            to    : ['BooksViewer']
+        },
+        {
+            grant : ['*'],
+            to    : ['BooksManager']
+        }
+    ]) as projection on bookshop.Books;
 
-    entity Books   as projection on bookshop.Books;
+    entity Authors @(restrict : [
+        {
+            grant : ['READ'],
+            to    : ['BooksViewer']
+        },
+        {
+            grant : ['*'],
+            to    : ['BooksManager']
+        }
+    ]) as projection on bookshop.Authors;
 
-    entity Authors as projection on bookshop.Authors;
-
-    entity Genres  as projection on bookshop.Genres;
+    entity Genres @(restrict : [
+        {
+            grant : ['READ'],
+            to    : ['BooksViewer']
+        },
+        {
+            grant : ['*'],
+            to    : ['BooksManager']
+        }
+    ]) as projection on bookshop.Genres;
 
 }

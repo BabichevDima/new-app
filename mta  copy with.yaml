@@ -3,7 +3,7 @@ ID: mta
 description: A simple CAP project.
 version: 1.0.0
 modules:
-  - name: mta-srv  
+  - name: mta-srv
     type: nodejs
     path: gen/srv
     provides:
@@ -46,7 +46,7 @@ modules:
               ServiceInstanceName: mta-xsuaa-srv
               ServiceKeyName: mta-uaa-key
               sap.cloud.service: mta
-          existing_destinations_policy: update
+          existing_destinations_policy: ignore
     build-parameters:
       no-source: true
   - name: mta-app-content
@@ -121,7 +121,6 @@ modules:
       disk-quota: 256M
     requires:
       - name: mta-destination-service
-      - name: mta-uaa
 resources:
   - name: mta-repo-host
     type: org.cloudfoundry.managed-service
@@ -180,6 +179,7 @@ resources:
       service: xsuaa
       service-name: mta-xsuaa-srv
       service-plan: application
+
   - name: mta-db
     type: com.sap.xs.hdi-container
     parameters:
